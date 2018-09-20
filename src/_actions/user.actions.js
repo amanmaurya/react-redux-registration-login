@@ -11,21 +11,24 @@ export const userActions = {
     delete: _delete
 };
 
-function login(username, password) {
+function login(response) {
+    console.log(response,'suuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
     return dispatch => {
-        dispatch(request({ username }));
-
-        userService.login(username, password)
-            .then(
-                user => { 
-                    dispatch(success(user));
-                    history.push('/');
-                },
-                error => {
-                    dispatch(failure(error.toString()));
-                    dispatch(alertActions.error(error.toString()));
-                }
-            );
+        // dispatch(request({ response }));
+        let user=response
+         // dispatch(success(user));
+        history.push('/');
+        // userService.login(username, password)
+        //     .then(
+        //         user => { 
+        //             dispatch(success(user));
+        //             history.push('/');
+        //         },
+        //         error => {
+        //             dispatch(failure(error.toString()));
+        //             dispatch(alertActions.error(error.toString()));
+        //         }
+        //     );
     };
 
     function request(user) { return { type: userConstants.LOGIN_REQUEST, user } }

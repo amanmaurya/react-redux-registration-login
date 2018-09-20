@@ -17,7 +17,7 @@ function login(username, password) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
     };
-
+    console.log(config.apiUrl,'$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
     return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
         .then(handleResponse)
         .then(user => {
@@ -33,7 +33,7 @@ function login(username, password) {
 
 function logout() {
     // remove user from local storage to log user out
-    localStorage.removeItem('user');
+    // localStorage.removeItem('user');
 }
 
 function getAll() {
