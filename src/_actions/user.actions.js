@@ -14,11 +14,12 @@ export const userActions = {
 function login(response) {
     console.log(response,'suuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
     return dispatch => {
-        // dispatch(request({ response }));
+        // // dispatch(request({ response }));
         let user=response
          // dispatch(success(user));
         history.push('/');
-        // userService.login(username, password)
+             localStorage.setItem('user', JSON.stringify(user));
+        // userService.login(response)
         //     .then(
         //         user => { 
         //             dispatch(success(user));
