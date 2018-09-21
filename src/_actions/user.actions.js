@@ -12,13 +12,18 @@ export const userActions = {
 };
 
 function login(response) {
-    console.log(response,'suuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
     return dispatch => {
-        // // dispatch(request({ response }));
+        dispatch(request({ response }));
         let user=response
-         // dispatch(success(user));
-        history.push('/');
+            console.log(user.accessToken,'suuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu')
+
+        if (user.accessToken) {
+                // store user details and jwt token in local storage to keep user logged in between page refreshes
+             // history.push('/');
              localStorage.setItem('user', JSON.stringify(user));
+            }
+         // dispatch(success(user));
+        
         // userService.login(response)
         //     .then(
         //         user => { 
