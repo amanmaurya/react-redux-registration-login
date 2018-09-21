@@ -2,26 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { userActions } from '../_actions';
-
-class HomePage extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(userActions.getAll());
-    }
-
-    handleDeleteUser(id) {
-        // return (e) => this.props.dispatch(userActions.delete(id));
-    }
+class NewPage extends React.Component {
+   
 
     render() {
         const { user, users } = this.props;
         return (
             <div className="col-md-6 col-md-offset-3">
                 <h1>Hi {user.name}!</h1>
+               <p>
+                   This is NewPage
                 
-                <p>
-                <Link to="/testpage">test</Link>
-                    <Link to="/login">Logout</Link>
                 </p>
             </div>
         );
@@ -37,5 +28,5 @@ function mapStateToProps(state) {
     };
 }
 
-const connectedHomePage = connect(mapStateToProps)(HomePage);
-export { connectedHomePage as HomePage };
+const connectedNewPage = connect(mapStateToProps)(NewPage);
+export { connectedNewPage as NewPage };

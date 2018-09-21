@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import FacebookLogin from 'react-facebook-login'
 
-import { userActions } from '../_actions';
+import { userActions } from '../../_actions';
 
 class LoginPage extends React.Component {
     constructor(props) {

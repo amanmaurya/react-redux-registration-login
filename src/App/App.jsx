@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
 import { PrivateRoute } from '../_components';
-import { HomePage } from '../HomePage';
-import { LoginPage } from '../LoginPage';
-import { RegisterPage } from '../RegisterPage';
-import { TestPage } from '../TestPage';
+import { HomePage } from '../Pages/HomePage';
+import { LoginPage } from '../Pages/LoginPage';
+import { TestPage } from '../Pages/TestPage';
+import {NewPage} from '../Pages/NewPage';
 
 class App extends React.Component {
     constructor(props) {
@@ -34,8 +34,10 @@ class App extends React.Component {
                             <div>
                                 <PrivateRoute exact path="/" component={HomePage} />
                                 <Route path="/login" component={LoginPage} />
-                                <Route path="/register" component={RegisterPage} />
+                                
                                 <Route path="/testpage" component={TestPage} />
+
+                                <Route path="/newpage" component={NewPage}></Route>
                             </div>
                         </Router>
                     </div>
